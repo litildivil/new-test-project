@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>test page | new test project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="/test-page">
+    <meta property="og:title" content="test page | new test project">
+    <meta property="og:url" content="/test-page">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="new test project">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#10b981">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+
+	/*===========GLOBAL===========*/
+  	:root {
+  		--bs-primary-color: var(--bs-primary-text-emphasis);
+  		--bs-secondary-color: var(--bs-secondary-text-emphasis);
+  		--bs-border-radius-xxl: var(--bs-border-radius-xl);
+  		--bs-border-radius-pill: var(--bs-border-radius);
+  	}
+  	/*END GLOBAL*/
+
+  	/*===========FONTS===========*/
+  	body, p, .form-control, .form-select, .form-check-label {
+      font-family: var(--st-font-body), sans-serif;
+    }
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-family: var(--st-font-headers), sans-serif;
+    }
+    button, .btn, .badge, .status-pill {
+      font-family: var(--st-font-buttons), sans-serif;
+    }
+    /*END FONTS*/
+	/*===========FONTS===========*/
+	/* Families + weights + base sizes */
+	body, p, .form-control, .form-select, .form-check-label {
+		font-family: var(--st-font-body), sans-serif;
+		font-weight: var(--st-font-body-weights, 400);
+		font-size: calc(var(--st-font-body-size, 1) * 1rem);
+	}
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		font-family: var(--st-font-headers), sans-serif;
+		font-weight: var(--st-font-headers-weights, 700);
+	}
+	button, .btn, .badge, .status-pill {
+		font-family: var(--st-font-buttons), sans-serif;
+		font-weight: var(--st-font-buttons-weights, 600);
+	}
+
+	/* Heading scale — every level is a multiple of --st-font-headers-size.
+	~1.25 modular scale anchored at h4 = base. Tweak the per-level rem factor. */
+
+	h1, .h1 { font-size: calc(var(--st-font-headers-size, 1.8) * 1.95rem); }
+	h2, .h2 { font-size: calc(var(--st-font-headers-size, 1.8) * 1.56rem); }
+	h3, .h3 { font-size: calc(var(--st-font-headers-size, 1.8) * 1.25rem); }
+	h4, .h4 { font-size: calc(var(--st-font-headers-size, 1.8) * 1.00rem); }
+	h5, .h5 { font-size: calc(var(--st-font-headers-size, 1.8) * 0.80rem); }
+	h6, .h6 { font-size: calc(var(--st-font-headers-size, 1.8) * 0.64rem); }
+
+	/* Buttons use their own size var (not the field size) */
+	.btn {
+		--bs-btn-font-size: calc(var(--st-font-buttons-size, 1) * 1rem);
+	}
+	button {
+		font-size: calc(var(--st-font-buttons-size, 1) * 1rem);
+	}
+	/*END FONTS*/
+
+
+    /*===========COLORS===========*/
+    body {
+		background: var(--bs-body-bg);
+		color: var(--bs-body-color);
+	}
+	.text-dark {
+		color: var(--bs-body-color) !important;
+	}
+	/*END COLORS*/
+
+    /*===========PADDING===========*/
+	.btn {
+      --bs-btn-padding-y: var(--st-fields-padding-y);
+      --bs-btn-padding-x: var(--st-fields-padding-x);
+      --bs-btn-font-size: var(--st-fields-font-size);
+    }
+    .form-control, .form-select {
+      padding: var(--st-fields-padding-y) var(--st-fields-padding-x);
+      font-size: var(--st-fields-font-size);
+    }
+    .form-check-input {
+      width: var(--st-selector-size);
+      height: var(--st-selector-size);
+    }
+    .form-switch .form-check-input {
+      width: var(--st-switch-width);
+    }
+    .badge {
+      --bs-badge-padding-y: var(--st-badge-padding-y);
+      --bs-badge-padding-x: var(--st-badge-padding-x);
+      --bs-badge-font-size: var(--st-badge-font-size);
+    }
+		/*END PADDING*/
+
+
+
+		/* Button Base Styles */
+		.btn {
+			/*color: var(--bs-body-color);*/
+		  padding: var(--bs-fields-padding, 0.375rem) var(--bs-fields-padding-x, 0.75rem);
+		  font-size: var(--bs-fields-font-size, 1rem);
+		  border-width: var(--bs-border-width);
+		  border-radius: var(--bs-border-radius);
+		  /*--bs-btn-hover-color: var(--bs-body-color) !important;*/
+		}
+
+		.btn-sm {
+		  padding: calc(var(--bs-fields-padding, 0.375rem) * 0.67) calc(var(--bs-fields-padding-x, 0.75rem) * 0.67);
+		  font-size: calc(var(--bs-fields-font-size, 1rem) * 0.875);
+		}
+
+		.btn-lg {
+		  padding: calc(var(--bs-fields-padding, 0.375rem) * 1.33) calc(var(--bs-fields-padding-x, 0.75rem) * 1.33);
+		  font-size: calc(var(--bs-fields-font-size, 1rem) * 1.25);
+		}
+
+
+
+		/* Button Color Variants */
+		.text-bg-primary {
+			color: var(--bs-primary-text-emphasis) !important;
+		}
+		.btn-primary {
+			color: var(--bs-primary-text-emphasis) !important;
+		  --bs-btn-bg: var(--bs-primary);
+		  --bs-btn-border-color: var(--bs-primary);
+		  --bs-btn-hover-bg: var(--bs-body-bg);
+		  --bs-btn-hover-border-color: var(--bs-primary);
+		  --bs-btn-hover-color: var(--bs-primary);
+		}
+		.btn-outline-primary {
+		  --bs-btn-color: var(--bs-primary);
+		  --bs-btn-border-color: var(--bs-primary);
+		  --bs-btn-hover-bg: var(--bs-primary);
+		  --bs-btn-hover-border-color: var(--bs-primary);
+		  --bs-btn-hover-color: var(--bs-body-bg);
+		}
+		.text-bg-secondary {
+			color: var(--bs-secondary-text-emphasis) !important;
+		}
+		.btn-secondary {
+			color: var(--bs-secondary-text-emphasis) !important;
+		  --bs-btn-bg: var(--bs-secondary);
+		  --bs-btn-border-color: var(--bs-secondary);
+		  --bs-btn-hover-bg: var(--bs-secondary-hover);
+		  --bs-btn-hover-border-color: var(--bs-secondary-hover-border);
+		}
+		.btn-outline-secondary {
+		  --bs-btn-color: var(--bs-secondary);
+		  --bs-btn-border-color: var(--bs-secondary);
+		  --bs-btn-hover-bg: var(--bs-secondary) !important;
+		  --bs-btn-hover-border-color: var(--bs-secondary);
+		  --bs-btn-hover-color: var(--bs-body-bg);
+		}
+		.btn-success {
+		  --bs-btn-bg: var(--bs-success);
+		  --bs-btn-border-color: var(--bs-success);
+		  --bs-btn-hover-bg: var(--bs-success-hover);
+		  --bs-btn-hover-border-color: var(--bs-success-hover-border);
+		}
+
+		.btn-info {
+		  --bs-btn-bg: var(--bs-info);
+		  --bs-btn-border-color: var(--bs-info);
+		  --bs-btn-hover-bg: var(--bs-info-hover);
+		  --bs-btn-hover-border-color: var(--bs-info-hover-border);
+		}
+
+		.btn-warning {
+		  --bs-btn-bg: var(--bs-warning);
+		  --bs-btn-border-color: var(--bs-warning);
+		  --bs-btn-hover-bg: var(--bs-warning-hover);
+		  --bs-btn-hover-border-color: var(--bs-warning-hover-border);
+		}
+
+		.btn-danger {
+		  --bs-btn-bg: var(--bs-danger);
+		  --bs-btn-border-color: var(--bs-danger);
+		  --bs-btn-hover-bg: var(--bs-danger-hover);
+		  --bs-btn-hover-border-color: var(--bs-danger-hover-border);
+		}
+
+
+
+		/* Form Controls */
+		.form-control,
+		.form-select {
+		  padding: var(--bs-fields-padding, 0.375rem) var(--bs-fields-padding-x, 0.75rem);
+		  font-size: var(--bs-fields-font-size, 1rem);
+		  border-width: var(--bs-border-width);
+		  border-radius: var(--bs-border-radius);
+		}
+
+		.form-control:focus,
+		.form-select:focus {
+		  border-color: var(--bs-primary);
+		  box-shadow: 0 0 0 var(--bs-focus-ring-width) rgba(var(--bs-primary-rgb), 0.25);
+		}
+
+		/* Checkboxes & Radio */
+		.form-check-input {
+		  width: var(--bs-selector-size, 1em);
+		  height: var(--bs-selector-size, 1em);
+		  border-width: var(--bs-border-width);
+		}
+
+		.form-check-input:checked {
+		  background-color: var(--bs-primary);
+		  border-color: var(--bs-primary);
+		}
+
+		/* Switches */
+		.form-switch .form-check-input {
+		  width: var(--bs-switch-width, 2em);
+		  height: var(--bs-selector-size, 1em);
+		}
+
+		/* Badges */
+		.badge {
+		  padding: var(--bs-badge-padding-y, 0.35em) var(--bs-badge-padding-x, 0.65em);
+		  font-size: var(--bs-badge-font-size, 0.75em);
+		  border-radius: var(--bs-border-radius-sm);
+		}
+
+		/* Cards */
+		.card {
+		  border-radius: var(--bs-border-radius-lg);
+		}
+
+		/* Alerts */
+		.alert {
+		  border-width: var(--bs-border-width);
+		  border-radius: var(--bs-border-radius-lg);
+		}
+
+		/* Nav Pills */
+		.nav-pills .nav-link {
+		  padding: var(--bs-fields-padding, 0.375rem) var(--bs-fields-padding-x, 0.75rem);
+		  font-size: var(--bs-fields-font-size, 1rem);
+		  border-radius: var(--bs-border-radius);
+		}
+
+		.nav-pills .nav-link.active {
+		  background-color: var(--bs-primary);
+		}
+
+		/* Pagination */
+		.page-link {
+		  padding: var(--bs-fields-padding, 0.375rem) var(--bs-fields-padding-x, 0.75rem);
+		  font-size: var(--bs-fields-font-size, 1rem);
+		  border-width: var(--bs-border-width);
+		  color: var(--bs-primary);
+		}
+
+		.page-item.active .page-link {
+		  background-color: var(--bs-primary);
+		  border-color: var(--bs-primary);
+		}
+
+		/* Progress */
+		.progress-bar {
+		  background-color: var(--bs-primary);
+		}
+
+		/* Tables */
+		.table > :not(caption) > * > * {
+		  border-bottom-width: var(--bs-border-width);
+		}
+
+
+
+		.card-title {
+		  /*font-size: var(--st-font-headers-size);*/
+		  font-weight: 600;
+		}
+
+		.card-text {
+		  /*font-size: var(--st-font-body-size);*/
+		  opacity: 0.7;
+		}
+
+		.price {
+		  /*font-size: calc(var(--st-font-headers-size, 1em) * 0.9);*/
+		  font-weight: 700;
+		  color: var(--bs-primary);
+		}
+
+		.price-large {
+		  font-size: var(--st-font-headers-size);
+		}
+
+		.price-large small {
+		  font-size: var(--st-font-body-size);
+		  opacity: 0.7;
+		}
+
+		.feature-list {
+		  list-style: none;
+		  padding: 0;
+		  opacity: 0.85;
+		}
+
+		.feature-list li {
+		  font-size: var(--st-font-body-size);
+		  display: flex;
+		  align-items: center;
+		}
+
+
+
+		.text-success {
+		  color: var(--bs-success);
+		  font-size: var(--st-font-body-size);
+		}
+
+		.table th {
+		  font-weight: 600;
+		  font-size: var(--st-font-body-size);
+		  text-transform: uppercase;
+		  letter-spacing: 0.03em;
+		  opacity: 0.7;
+		}	
+		  
+		/* btn-cpa.css — button component.
+		All look & feel comes from --btn-* custom properties defined on :root in the
+		active theme (written by the Button designer). Import once into the iframe;
+		add class="btn-cpa" to a button to apply it. */
+
+		.btn-cpa {
+			display: inline-flex;
+			flex-direction: var(--btn-direction, row);
+			align-items: var(--btn-align, center);
+			justify-content: var(--btn-justify, center);
+			gap: var(--btn-gap, 0.625rem);
+			padding: var(--btn-pad-y, 0.625rem) var(--btn-pad-x, 1.25rem);
+			width: var(--btn-width, auto);
+			min-width: var(--btn-min-width, 0px);
+			border: var(--btn-border-width, 1px) var(--btn-border-style, solid) currentColor;
+			border-radius: var(--btn-radius, 0.5rem);
+			box-shadow: var(--btn-shadow, none);
+			background: transparent;
+			cursor: pointer;
+			transition: transform var(--btn-transition, 200ms) ease,
+						box-shadow var(--btn-transition, 200ms) ease;
+		}
+
+		.btn-cpa__text {
+			display: flex;
+			flex-direction: column;
+			gap: var(--btn-text-gap, 0.1rem);
+			text-align: var(--btn-text-align, left);
+			line-height: var(--btn-line, 1.2);
+		}
+
+		.btn-cpa__uptitle {
+			font-size: var(--btn-size-up, 0.6875rem);
+			letter-spacing: var(--btn-tracking-up, 0.08em);
+			text-transform: var(--btn-transform-up, uppercase);
+			opacity: 0.75;
+		}
+		.btn-cpa__title    { font-size: var(--btn-size-title, 1rem); }
+		.btn-cpa__subtitle { font-size: var(--btn-size-sub, 0.8125rem); opacity: 0.7; }
+		.btn-cpa__icon     { transition: transform var(--btn-transition, 200ms) ease; }
+		.btn-cpa__icon i   { font-size: var(--btn-icon-size, 1rem); display: block; }
+
+		/* hover — driven entirely by --btn-hover-* (set from the chosen preset).
+		Defaults are no-ops, so "None" leaves the button untouched. */
+		
+		.btn-cpa:hover {
+			transform: var(--btn-hover-transform, none);
+			box-shadow: var(--btn-hover-shadow, var(--btn-shadow, none));
+		}
+		.btn-cpa:hover .btn-cpa__icon--left  { transform: var(--btn-hover-icon-left, none); }
+		.btn-cpa:hover .btn-cpa__icon--right { transform: var(--btn-hover-icon-right, none); }  
+		
+		
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX',{ anonymize_ip: true });</script>
+</head>
+<body>
+    
+  
+  <header class="navbar navbar-expand-lg bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+      <img src="assets/a8faf0c8609e0da731e57e3a425f99b2a67208467f85d1d975d09dac6f21.webp" alt="new test project" height="36">
+      <span class="fw-semibold" style="font-family: Impact, sans-serif; text-shadow: rgba(0, 0, 0, 0.5) 6px 2px 4px; color: rgb(242, 242, 242);">new test project</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/services">Services</a>
+        </li>
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/portfolio">Portfolio</a>
+        </li>
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        
+      </ul>
+      <div class="d-flex gap-2 ms-lg-3">
+        
+        <a href="https://twitter.com" class="btn btn-sm btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width:34px;height:34px;" title="Twitter">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+        
+
+        <a href="https://facebook.com" class="btn btn-sm btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width:34px;height:34px;" title="Facebook">
+          <i class="bi bi-facebook"></i>
+        </a>
+        
+
+        <a href="https://instagram.com" class="btn btn-sm btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width:34px;height:34px;" title="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+        
+      </div>
+      <a href="#signup" class="btn btn-sm btn-primary ms-lg-3">Get Started</a>
+    </div>
+  </div>
+</header>
+  
+
+
+  
+
+
+<section class="py-5">
+  <div class="container" style="padding-left: 74px; padding-right: 74px;">
+    <a href="mailto:">Mail</a>
+    <div class="row justify-content-center text-center" style="padding-left: 5px; padding-right: 5px;">
+      <div class="col-lg-8">
+        <span class="badge text-bg-primary mb-3"> About</span>
+        <h2 class="fw-bold mb-3" style="padding-top: 0px; padding-bottom: 0px; font-family: &quot;Courier New&quot;;">Our Story, Beyond What We Do</h2>
+        <p class="text-body-secondary mb-0" style="margin-top: -14px; margin-bottom: 0px; padding-top: 26px; padding-bottom: 26px;">
+          Use this space to tell people who you are, what you &lt;b&gt; believe, and why your work matters. A couple of honest sentences beat a wall of copy.
+        </p>
+      <img src="assets/977d7bae32a435d97ef50686a69a90fdd83da03da692811d0b498df51947.webp" alt="Describe this image" class="img-fluid"></div>
+    </div>
+  </div>
+  
+</section><section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div>
+<div class="col-md-6">
+  <figure class="card h-100 border-0 shadow-sm">
+    <blockquote class="card-body mb-0">
+      <p class="card-text" style="margin-bottom:300px">Setup was effortless and the support has been outstanding.</p>
+    </blockquote>
+    <figcaption class="card-footer bg-transparent border-0 d-flex align-items-center gap-3">
+      <img src="assets/landscape-placeholder.svg" class="rounded-circle" alt="Cody Fisher" style="width:2.5rem;height:2.5rem;object-fit:cover">
+      <div>
+        <div class="fw-semibold">Cody Fisher</div>
+        <div class="text-body-secondary small">CTO, Globex</div>
+      </div>
+    </figcaption>
+  </figure>
+</div>
+
+
+<div class="col-md-6">
+  <figure class="card h-100 border-0 shadow-sm">
+    <blockquote class="card-body mb-0">
+      <p class="card-text" style="margin-bottom:300px">dffdfdffd</p>
+    </blockquote>
+    <figcaption class="card-footer bg-transparent border-0 d-flex align-items-center gap-3">
+      <img src="assets/landscape-placeholder.svg" class="rounded-circle" alt="Jane Cooper" style="width:2.5rem;height:2.5rem;object-fit:cover">
+      <div>
+        <div class="fw-semibold">Jane Cooper</div>
+        <div class="text-body-secondary small">CEO, Acme Inc</div>
+      </div>
+    </figcaption>
+  </figure>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
